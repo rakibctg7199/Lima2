@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>লোন আবেদন</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>📝 লোন আবেদন ফর্ম</h2>
+
+    <label>👤 আপনার নাম:</label>
+    <input type="text" placeholder="আপনার নাম লিখুন" required />
+
+    <label>🏠 বর্তমান ঠিকানা:</label>
+    <input type="text" placeholder="ঠিকানা লিখুন" required />
+
+    <label>💼 আপনার পেশা:</label>
+    <input type="text" placeholder="পেশা লিখুন" required />
+
+    <label>💰 মাসিক আয়:</label>
+    <input type="number" placeholder="মাসিক ইনকাম লিখুন" required />
+
+    <label>📋 লোনের কারণ:</label>
+    <input type="text" placeholder="লোনের প্রয়োজনীয়তা লিখুন" required />
+
+    <label>📦 লোনের পরিমাণ (৳):</label>
+    <input type="number" id="loanAmount" oninput="calculateLoan()" placeholder="যত টাকা চান লিখুন" required />
+
+    <label>🕒 সময়কাল (মাস):</label>
+    <select id="duration" onchange="calculateLoan()">
+      <option value="3">৩ মাস</option>
+      <option value="6">৬ মাস</option>
+      <option value="9">৯ মাস</option>
+      <option value="12">১২ মাস</option>
+      <option value="18">১৮ মাস</option>
+      <option value="24">২৪ মাস</option>
+    </select>
+
+    <label>📈 মোট পরিশোধযোগ্য (২% সুদ সহ):</label>
+    <input type="text" id="totalPayable" readonly />
+
+    <label>📱 আপনার বিকাশ নাম্বার:</label>
+    <input type="tel" placeholder="আপনার নাম্বার লিখুন" required />
+
+    <button onclick="submitLoan()">✅ আবেদন সাবমিট করুন</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
